@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Consultez et ajoutez des éléments depuis une interface simple."
+    />
+    <title>Mes éléments</title>
+    <link rel="stylesheet" href="./index.css" />
+    <script src="./index.js" defer></script>
+    <script src="./config.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="page-header">
+        <p class="eyebrow">Votre espace</p>
+        <h1>Mes éléments<span class="heading-dot">.</span></h1>
+        <p class="intro">
+          Retrouvez votre liste et ajoutez-y facilement de nouveaux éléments.
+        </p>
+      </header>
+
+      <section class="content-grid" aria-label="Gestion des éléments">
+        <section class="panel form-panel" aria-labelledby="form-title">
+          <div class="section-heading">
+            <span class="step-number" aria-hidden="true">01</span>
+            <div>
+              <p class="eyebrow">Nouvelle entrée</p>
+              <h2 id="form-title">Ajouter un élément</h2>
+            </div>
+          </div>
+
+          <form id="item-form">
+            <label for="item-name">Nom de l’élément</label>
+            <input
+              id="item-name"
+              name="name"
+              type="text"
+              maxlength="120"
+              placeholder="Ex. Une idée à retenir"
+              autocomplete="off"
+              required
+            />
+
+            <label for="item-description">
+              Description <span class="optional">(facultatif)</span>
+            </label>
+            <textarea
+              id="item-description"
+              name="description"
+              rows="4"
+              maxlength="500"
+              placeholder="Ajoutez quelques détails…"
+            ></textarea>
+
+            <button id="submit-button" type="submit">
+              <span>Ajouter à la liste</span>
+              <span class="button-arrow" aria-hidden="true">↗</span>
+            </button>
+          </form>
+        </section>
+
+        <section class="panel list-panel" aria-labelledby="list-title">
+          <div class="list-heading">
+            <div class="section-heading">
+              <span class="step-number" aria-hidden="true">02</span>
+              <div>
+                <p class="eyebrow">Votre collection</p>
+                <h2 id="list-title">Éléments enregistrés</h2>
+              </div>
+            </div>
+            <span id="item-count" class="item-count" aria-label="Nombre d’éléments">
+              —
+            </span>
+          </div>
+
+          <p id="status-message" class="status-message" role="status" aria-live="polite">
+            Chargement des éléments…
+          </p>
+          <ul id="item-list" class="item-list" aria-label="Liste des éléments"></ul>
+        </section>
+      </section>
+
+      <footer class="page-footer">
+        <span class="footer-mark" aria-hidden="true">✳</span>
+        <span>Une liste claire, l’esprit léger.</span>
+      </footer>
+    </main>
+  </body>
+</html>
